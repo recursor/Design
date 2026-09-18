@@ -1,0 +1,263 @@
+/* INOV8 Orthopedics Design System — generated from tokens.json */
+:root, [data-theme="default"] {
+  --inov8-grad-teal: #01b0ab;
+  --inov8-grad-cyan: #00a9d2;
+  --inov8-grad-mid: #01668e;
+  --inov8-grad-blue: #163a6d;
+  --inov8-grad-navy: #20265a;
+  --teal-50: #e6f8f7;
+  --teal-100: #bfefec;
+  --teal-200: #80dfd9;
+  --teal-300: #33c5bd;
+  --teal-500: #01b0ab;
+  --teal-600: #019693;
+  --teal-700: #017470;
+  --teal-800: #014f4c;
+  --cyan-50: #e6f6fb;
+  --cyan-100: #bce8f3;
+  --cyan-200: #7fd2e8;
+  --cyan-300: #33b8de;
+  --cyan-500: #00a9d2;
+  --cyan-600: #008fb2;
+  --cyan-700: #006c8a;
+  --blue-300: #4a7fb2;
+  --blue-500: #01668e;
+  --blue-600: #014e6e;
+  --blue-700: #163a6d;
+  --navy-800: #1a2f5a;
+  --navy-900: #20265a;
+  --navy-950: #14183b;
+  --neutral-0: #ffffff;
+  --neutral-50: #f7f8fa;
+  --neutral-100: #eef0f4;
+  --neutral-200: #dde2ea;
+  --neutral-300: #c4cbd7;
+  --neutral-400: #97a0b0;
+  --neutral-500: #6b7385;
+  --neutral-600: #4b5364;
+  --neutral-700: #343a48;
+  --neutral-800: #1f2330;
+  --neutral-900: #11141c;
+  --success-500: #2e9e6a;
+  --success-50: #e7f5ee;
+  --warning-500: #d08a2c;
+  --warning-50: #fbf1e1;
+  --danger-500: #c24545;
+  --danger-50: #faeaea;
+  --info-500: var(--cyan-500);
+  --info-50: var(--cyan-50);
+  --bg: var(--neutral-0);
+  --bg-soft: var(--neutral-50);
+  --bg-muted: var(--neutral-100);
+  --bg-dark: var(--navy-900);
+  --bg-dark-soft: var(--navy-800);
+  --fg: var(--navy-950);
+  --fg-strong: var(--navy-900);
+  --fg-muted: var(--neutral-600);
+  --fg-subtle: var(--neutral-500);
+  --fg-on-dark: var(--neutral-0);
+  --fg-on-brand: var(--neutral-0);
+  --border: var(--neutral-200);
+  --border-strong: var(--neutral-300);
+  --divider: var(--neutral-100);
+  --link: var(--cyan-600);
+  --link-hover: var(--blue-500);
+  --brand: var(--cyan-500);
+  --brand-strong: var(--blue-500);
+  --brand-deep: var(--navy-900);
+  --accent: var(--teal-500);
+  --shadow-xs: 0 1px 2px rgba(32,38,90,0.06);
+  --shadow-sm: 0 2px 6px rgba(32,38,90,0.06), 0 1px 2px rgba(32,38,90,0.04);
+  --shadow-md: 0 8px 24px -8px rgba(32,38,90,0.16), 0 2px 6px rgba(32,38,90,0.06);
+  --shadow-lg: 0 24px 48px -16px rgba(32,38,90,0.18), 0 8px 16px -8px rgba(32,38,90,0.08);
+  --shadow-focus: 0 0 0 3px rgba(0,169,210,0.32);
+}
+:root {
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 400ms;
+  --inov8-gradient: linear-gradient( 90deg, #01B0AB 0%, #00A9D2 22%, #01668E 50%, #163A6D 70%, #20265A 100% );
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-base: 16px;
+  --fs-md: 18px;
+  --fs-lg: 20px;
+  --fs-xl: 24px;
+  --fs-2xl: 30px;
+  --fs-3xl: 38px;
+  --fs-4xl: 48px;
+  --fs-5xl: 60px;
+  --fs-6xl: 76px;
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-normal: 1.5;
+  --lh-loose: 1.7;
+  --ls-display: -0.01em;
+  --ls-eyebrow: 0.14em;
+  --ls-body: 0;
+  --font-display: "Jost", "Futura", "Avenir Next", system-ui, sans-serif;
+  --font-body: "DM Sans", "Helvetica Neue", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --text-body: 400 16px/1.5 var(--font-body); /* From `body` in colors_and_type.css, preview/_card.css. */
+  --text-h1: 300 60px/1.1 var(--font-display); /* From `h1, h2, h3, h4, h5, h6` · `.display, h1` in colors_and_type.css. */
+  --text-h2: 300 48px/1.1 var(--font-display); /* From `h1, h2, h3, h4, h5, h6` · `h2` in colors_and_type.css. */
+  --text-h3: 400 30px/1.1 var(--font-display); /* From `h1, h2, h3, h4, h5, h6` · `h3` in colors_and_type.css. */
+  --text-h4: 500 24px/1.1 var(--font-display); /* From `h1, h2, h3, h4, h5, h6` · `h4` in colors_and_type.css. */
+  --text-h5: 500 20px/1.1 var(--font-display); /* From `h1, h2, h3, h4, h5, h6` · `h5` in colors_and_type.css. */
+  --text-h6: 600 16px/1.1 var(--font-display); /* From `h1, h2, h3, h4, h5, h6` · `h6` in colors_and_type.css. */
+  --text-p: 400 16px/1.5 var(--font-body); /* From `p` in colors_and_type.css. */
+  --text-small: 400 14px/1.5 var(--font-body); /* From `small, .small` in colors_and_type.css; also `.small`. */
+  --text-code: 400 0.92em/1.5 var(--font-mono); /* From `code, kbd, samp, pre` in colors_and_type.css. */
+  --text-pre: 400 0.92em/1.5 var(--font-mono); /* From `code, kbd, samp, pre` in colors_and_type.css. */
+  --text-kbd: 400 0.92em/1.5 var(--font-mono); /* From `code, kbd, samp, pre` in colors_and_type.css. */
+  --text-display: 300 60px/1.1 var(--font-body); /* From `.display, h1` in colors_and_type.css. */
+  --text-eyebrow: 600 12px/1.5 var(--font-body); /* From `.eyebrow` in colors_and_type.css — uppercase. */
+  --text-lead: 400 18px/1.5 var(--font-body); /* From `.lead` in colors_and_type.css. */
+  --text-caption: 400 12px/1.5 var(--font-body); /* From `.caption` in colors_and_type.css. */
+  --text-label: 600 11px/1.5 var(--font-body); /* From `.label` in preview/_card.css — uppercase. */
+}
+.body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.h1 {
+  font-family: var(--font-display);
+  font-size: 60px;
+  line-height: 1.1;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+.h2 {
+  font-family: var(--font-display);
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+.h3 {
+  font-family: var(--font-display);
+  font-size: 30px;
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.h4 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.h5 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.h6 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.p {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.small {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.pre {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.kbd {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.display {
+  font-family: var(--font-body);
+  font-size: 60px;
+  line-height: 1.1;
+  font-weight: 300;
+  letter-spacing: 0;
+}
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+.lead {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.caption {
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}

@@ -1,0 +1,273 @@
+{
+  "v": 3,
+  "assetGroups": {
+    "Logos": {
+      "files": {
+        "inov8-logo.png": {
+          "blob": "43c11c3403fb55b253a7b1e246e8e8df",
+          "name": "inov8-logo.png",
+          "sha256": "7a2ecb54f5421a34bef2815a207bad190086733113f2a94ee551059f1ed3ceff",
+          "size": 75723,
+          "type": "image/png"
+        }
+      },
+      "name": "Logos",
+      "order": []
+    },
+    "Other": {
+      "files": {},
+      "name": "Other",
+      "order": []
+    },
+    "Uploads": {
+      "files": {
+        "INOV8_gradient_cmyk.jpg": {
+          "blob": "a72433fe906f712c27fde1e66d157aaa",
+          "name": "INOV8_gradient_cmyk.jpg",
+          "sha256": "7dfaf9cf73391492e0985d47f0e0fb5fe372ed7028a2cc03105527c4b712299b",
+          "size": 49039,
+          "type": "image/jpeg"
+        },
+        "INOV8_gradient_cmyk.png": {
+          "blob": "43c11c3403fb55b253a7b1e246e8e8df",
+          "name": "INOV8_gradient_cmyk.png",
+          "sha256": "7a2ecb54f5421a34bef2815a207bad190086733113f2a94ee551059f1ed3ceff",
+          "size": 75723,
+          "type": "image/png"
+        },
+        "pasted-1779482478009-0.png": {
+          "blob": "23f66faa6e0196175bdf0236aaa2a828",
+          "name": "pasted-1779482478009-0.png",
+          "sha256": "65154d2158feb6f0f7036a785360bb63c62103ea784a5fb79749e90810036d97",
+          "size": 57211,
+          "type": "image/png"
+        },
+        "pasted-1779482671071-0.png": {
+          "blob": "45627bf58954243f57e82cef8da3bcc0",
+          "name": "pasted-1779482671071-0.png",
+          "sha256": "b14927569dc922369896b088aef6612333848fa2356ea405801ea61a8fde7210",
+          "size": 37345,
+          "type": "image/png"
+        }
+      },
+      "name": "Uploads",
+      "order": []
+    },
+    "notes": {
+      "files": {},
+      "name": "notes",
+      "order": []
+    },
+    "scrap": {
+      "files": {
+        "01-final-test.png": {
+          "blob": "abc9f2c51028a5bf57d50c4e841fe11e",
+          "name": "01-final-test.png",
+          "sha256": "9701105cabe391eba9f06e36fb73c39c8919495d9cd5832c1352fe4229744083",
+          "size": 58879,
+          "type": "image/png"
+        },
+        "01-find-override.png": {
+          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+          "name": "01-find-override.png",
+          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+          "size": 58869,
+          "type": "image/png"
+        },
+        "01-nav-attr.png": {
+          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+          "name": "01-nav-attr.png",
+          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+          "size": 58869,
+          "type": "image/png"
+        },
+        "01-nav-debug.png": {
+          "blob": "ac667d18537d27f66d9af9ab1d76fa40",
+          "name": "01-nav-debug.png",
+          "sha256": "8085f9356ca66b02df6075833b3b8efec32adf0fc819655b9ecd0e9d2ab964de",
+          "size": 58919,
+          "type": "image/png"
+        },
+        "01-nav-fix.png": {
+          "blob": "abc9f2c51028a5bf57d50c4e841fe11e",
+          "name": "01-nav-fix.png",
+          "sha256": "9701105cabe391eba9f06e36fb73c39c8919495d9cd5832c1352fe4229744083",
+          "size": 58879,
+          "type": "image/png"
+        },
+        "01-nav-state.png": {
+          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+          "name": "01-nav-state.png",
+          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+          "size": 58869,
+          "type": "image/png"
+        },
+        "01-nav-state3.png": {
+          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+          "name": "01-nav-state3.png",
+          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+          "size": 58869,
+          "type": "image/png"
+        },
+        "01-nav-test2.png": {
+          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+          "name": "01-nav-test2.png",
+          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+          "size": 58869,
+          "type": "image/png"
+        },
+        "01-nav-test3.png": {
+          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+          "name": "01-nav-test3.png",
+          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+          "size": 58869,
+          "type": "image/png"
+        },
+        "02-final-test.png": {
+          "blob": "7f365e4e0b9acb3199db449c101490b2",
+          "name": "02-final-test.png",
+          "sha256": "eb984197100d2344976a24ce347ceedc657ae6cb53bf8559a8e606f40fb5d686",
+          "size": 58899,
+          "type": "image/png"
+        },
+        "02-find-override.png": {
+          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+          "name": "02-find-override.png",
+          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+          "size": 58869,
+          "type": "image/png"
+        },
+        "02-nav-attr.png": {
+          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+          "name": "02-nav-attr.png",
+          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+          "size": 58869,
+          "type": "image/png"
+        },
+        "02-nav-debug.png": {
+          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+          "name": "02-nav-debug.png",
+          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+          "size": 58869,
+          "type": "image/png"
+        },
+        "02-nav-fix.png": {
+          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+          "name": "02-nav-fix.png",
+          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+          "size": 58869,
+          "type": "image/png"
+        },
+        "02-nav-state.png": {
+          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+          "name": "02-nav-state.png",
+          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+          "size": 58869,
+          "type": "image/png"
+        },
+        "02-nav-state3.png": {
+          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+          "name": "02-nav-state3.png",
+          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+          "size": 58869,
+          "type": "image/png"
+        },
+        "02-nav-test2.png": {
+          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+          "name": "02-nav-test2.png",
+          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+          "size": 58869,
+          "type": "image/png"
+        },
+        "02-nav-test3.png": {
+          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+          "name": "02-nav-test3.png",
+          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+          "size": 58869,
+          "type": "image/png"
+        },
+        "03-nav-fix.png": {
+          "blob": "ac667d18537d27f66d9af9ab1d76fa40",
+          "name": "03-nav-fix.png",
+          "sha256": "8085f9356ca66b02df6075833b3b8efec32adf0fc819655b9ecd0e9d2ab964de",
+          "size": 58919,
+          "type": "image/png"
+        },
+        "nav-test.png": {
+          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+          "name": "nav-test.png",
+          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+          "size": 58869,
+          "type": "image/png"
+        },
+        "standalone-check.png": {
+          "blob": "7377f2cb870899793c76603e19e94233",
+          "name": "standalone-check.png",
+          "sha256": "6a970de069bb810ca90391f3c4d4f301e099f887ae193d421e4173ae905b6a5c",
+          "size": 27894,
+          "type": "image/png"
+        }
+      },
+      "name": "scrap",
+      "order": []
+    }
+  },
+  "blobs": {
+    "assets/inov8-logo.jpg": {
+      "blob": "a72433fe906f712c27fde1e66d157aaa",
+      "name": "assets/inov8-logo.jpg",
+      "sha256": "7dfaf9cf73391492e0985d47f0e0fb5fe372ed7028a2cc03105527c4b712299b",
+      "size": 49039,
+      "type": "image/jpeg"
+    },
+    "assets/inov8-logo.png": {
+      "blob": "43c11c3403fb55b253a7b1e246e8e8df",
+      "name": "assets/inov8-logo.png",
+      "sha256": "7a2ecb54f5421a34bef2815a207bad190086733113f2a94ee551059f1ed3ceff",
+      "size": 75723,
+      "type": "image/png"
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-09-17T18:29:19.930Z",
+    "v": 1
+  },
+  "docs": {
+    "readme": "project/README.md",
+    "sections": [
+      "project/ui_kits/website/README.md"
+    ]
+  },
+  "groups": [
+    "Logos",
+    "Uploads",
+    "Other",
+    "notes",
+    "scrap"
+  ],
+  "layout": "files",
+  "libraries": [
+    {
+      "file": "components/lib/react.production.min.js",
+      "global": "React",
+      "name": "react",
+      "version": "18.3.1"
+    },
+    {
+      "file": "components/lib/react-dom.production.min.js",
+      "global": "ReactDOM",
+      "name": "react-dom",
+      "version": "18.3.1"
+    }
+  ],
+  "namespace": "INOV8OrthopedicsDesignSystem_137bbb",
+  "sections": {},
+  "source": {
+    "app": "claude-design",
+    "exportedAt": "2026-09-17T18:29:19.930Z",
+    "projectId": "137bbb80-614b-4cf5-a9a2-2aeb441e80cd",
+    "url": "https://claude.ai/design/p/137bbb80-614b-4cf5-a9a2-2aeb441e80cd",
+    "v": 1
+  },
+  "title": "INOV8 Orthopedics Design System"
+}

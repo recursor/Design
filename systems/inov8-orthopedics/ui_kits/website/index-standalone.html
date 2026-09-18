@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1280">
+  <title>INOV8 Orthopedics — UI kit recreation</title>
+
+  <!-- Resources referenced only as strings inside JSX -->
+  <meta name="ext-resource-dependency" content="../../assets/inov8-logo.png" data-resource-id="logo" />
+
+  <!-- Splash / fallback shown while the bundle unpacks -->
+  <template id="__bundler_thumbnail" data-bg-color="#20265A">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"  stop-color="#01B0AB" />
+          <stop offset="22%" stop-color="#00A9D2" />
+          <stop offset="50%" stop-color="#01668E" />
+          <stop offset="70%" stop-color="#163A6D" />
+          <stop offset="100%" stop-color="#20265A" />
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="800" fill="#20265A" />
+      <g font-family="'Jost', 'Futura', sans-serif" font-weight="700" letter-spacing="-6">
+        <text x="600" y="430" text-anchor="middle" font-size="280" fill="url(#g)">INOV8</text>
+        <text x="600" y="530" text-anchor="middle" font-size="68" font-weight="300" fill="#9DB3D6" letter-spacing="2">Orthopedics</text>
+      </g>
+    </svg>
+  </template>
+
+  <link rel="stylesheet" href="../../colors_and_type.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <style>
+    html, body { margin: 0; padding: 0; background: var(--bg); }
+    * { box-sizing: border-box; }
+    button { font: inherit; }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script type="text/babel" data-presets="env,react">
+// ===== Header.jsx =====
+// Header.jsx — INOV8 Orthopedics top utility bar + logo + primary nav.
+// Sticky on scroll with a subtle backdrop blur; matches the live
+// site's IA: Home · About · Procedures · Patients · Referring Doctors
+// · Media · FAQ · Contact · Request Appointment.
+
+function Header({ activeNav, onNav, onRequest }) {
+  const items = [
+    { id: 'home',       label: 'Home' },
+    { id: 'about',      label: 'About',          hasMenu: true },
+    { id: 'procedures', label: 'Procedures',     hasMenu: true },
+    { id: 'patients',   label: 'Patients' },
+    { id: 'referring',  label: 'Referring Doctors' },
+    { id: 'media',      label: 'Media' },
+    { id: 'faq',        label: 'FAQ' },
+    { id: 'contact',    label: 'Contact' },
+  ];
+
+  return (
+    <header style={headerStyles.root}>
+      {/* Utility row */}
+      <div style={headerStyles.utility}>
+        <div style={headerStyles.utilityInner}>
+          <a href="tel:3465717500" style={headerStyles.utilityLink}>
+            <i data-lucide="phone" style={{ width: 12, height: 12 }}></i> (346) 571-7500
+          </a>
+          <span style={{ color: 'rgba(255,255,255,0.35)' }}>·</span>
+          <a href="#" style={headerStyles.utilityLink}>
+            <i data-lucide="map-pin" style={{ width: 12, height: 12 }}></i> 10496 Katy Fwy, Houston, TX
+          </a>
+          <span style={{ color: 'rgba(255,255,255,0.35)' }}>·</span>
+          <span style={{ ...headerStyles.utilityLink, opacity: 0.85 }}>Mon – Fri  8:00 am – 5:00 pm</span>
+        </div>
+      </div>
+
+      {/* Logo + nav row */}
+      <div style={headerStyles.bar}>
+        <div style={headerStyles.barInner}>
+          <a href="#" onClick={(e) => { e.preventDefault(); onNav && onNav('home'); }} style={{ display: 'flex' }}>
+            <img src={window.__resources.logo} alt="INOV8 Orthopedics" style={{ height: 42 }} />
+          </a>
+
+          <nav style={headerStyles.nav}>
+            {items.map((item) => {
+              const active = activeNav === item.id;
+              return (
+                <a
+                  key={item.id}
+                  href="#"
+                  onClick={(e) => { e.preventDefault(); onNav && onNav(item.id); }}
+                  style={{ ...headerStyles.navLink, ...(active ? headerStyles.navLinkActive : null) }}
+                >
+                  {item.label}
+                  {item.hasMenu && <i data-lucide="chevron-down" style={{ width: 12, height: 12, marginLeft: 3 }}></i>}
+                </a>
+              );
+            })}
+          </nav>
+
+          <button onClick={onRequest} style={headerStyles.cta}>Request appointment</button>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+const headerStyles = {
+  root: { position: 'sticky', top: 0, zIndex: 50, background: '#fff', boxShadow: '0 1px 2px rgba(32,38,90,0.06)' },
+  utility: { background: 'var(--navy-900)', color: '#fff' },
+  utilityInner: {
+    maxWidth: 1200, margin: '0 auto', padding: '8px 32px',
+    display: 'flex', alignItems: 'center', gap: 14, fontSize: 12,
+  },
+  utilityLink: {
+    color: 'rgba(255,255,255,0.92)', textDecoration: 'none',
+    display: 'inline-flex', alignItems: 'center', gap: 6, fontWeight: 500,
+  },
+  bar: { background: 'rgba(255,255,255,0.94)', backdropFilter: 'blur(12px)' },
+  barInner: {
+    maxWidth: 1200, margin: '0 auto', padding: '14px 32px',
+    display: 'flex', alignItems: 'center', gap: 24, justifyContent: 'space-between',
+  },
+  nav: { display: 'flex', alignItems: 'center', gap: 22, flex: 1, marginLeft: 40 },
+  navLink: {
+    fontSize: 13, fontWeight: 500, color: 'var(--fg-strong)', textDecoration: 'none',
+    display: 'inline-flex', alignItems: 'center', cursor: 'pointer',
+    padding: '6px 0',
+    borderBottomWidth: 2,
+    borderBottomStyle: 'solid',
+    borderBottomColor: 'transparent',         // reserve the underline slot
+  },
+  navLinkActive: {
+    color: 'var(--cyan-700)', fontWeight: 600,
+    borderBottomColor: '#00A9D2',
+  },
+  cta: {
+    fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600,
+    padding: '10px 18px', border: 0, borderRadius: 999,
+    background: 'var(--cyan-500)', color: '#fff', cursor: 'pointer',
+    boxShadow: '0 2px 6px rgba(32,38,90,0.06)',
+    transition: 'background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out)',
+  },
+};
+
+
+// ===== Hero.jsx =====
+// Hero.jsx — full-width hero section with eyebrow / display heading /
+// gradient rule / lead / CTA pair / right-side image placeholder.
+// Matches the live site's hero copy verbatim.
+
+function Hero({ onRequest }) {
+  return (
+    <section style={heroStyles.section}>
+      <div style={heroStyles.inner}>
+        <div style={heroStyles.text}>
+          <p className="eyebrow" style={{ margin: 0, color: 'var(--cyan-600)' }}>Welcome to INOV8 Orthopedics</p>
+          <h1 style={heroStyles.h1}>
+            Orthopedic surgery, sports medicine, and physical therapy in <span className="gradient-text" style={{ fontWeight: 500 }}>Houston, TX</span>.
+          </h1>
+          <hr className="gradient-rule" />
+          <p style={heroStyles.lead}>
+            Innovative orthopedic care for exceptional patient outcomes. Our team specializes in outpatient
+            total joint replacement and the full range of musculoskeletal, orthopedic, and arthritic conditions.
+          </p>
+          <div style={heroStyles.ctas}>
+            <button onClick={onRequest} style={heroStyles.primary}>Request appointment</button>
+            <a href="tel:3465717500" style={heroStyles.secondary}>
+              <i data-lucide="phone" style={{ width: 14, height: 14 }}></i> (346) 571-7500
+            </a>
+          </div>
+          <div style={heroStyles.proof}>
+            <Stat n="4" label="Board-certified surgeons" />
+            <Divider />
+            <Stat n="6" label="Specialty areas" />
+            <Divider />
+            <Stat n="1" label="ASC in Texas with AAAHC orthopedic certification" small />
+          </div>
+        </div>
+
+        <div style={heroStyles.media}>
+          <div style={heroStyles.mediaCard}>
+            <div style={heroStyles.mediaImg}>
+              <i data-lucide="image" style={{ width: 48, height: 48, color: '#fff', opacity: 0.6 }}></i>
+              <div style={heroStyles.mediaCaption}>Photography placeholder · physician with patient</div>
+            </div>
+            <div style={heroStyles.floatChip}>
+              <span style={{ width: 8, height: 8, borderRadius: 999, background: 'var(--success-500)', display: 'inline-block' }}></span>
+              Accepting new patients
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Stat({ n, label, small }) {
+  return (
+    <div>
+      <div style={{ fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 38, lineHeight: 1, color: 'var(--fg-strong)' }}>{n}</div>
+      <div style={{ fontSize: small ? 11 : 12, color: 'var(--fg-muted)', marginTop: 4, maxWidth: 160, lineHeight: 1.35 }}>{label}</div>
+    </div>
+  );
+}
+function Divider() {
+  return <div style={{ width: 1, alignSelf: 'stretch', background: 'var(--divider)' }} />;
+}
+
+const heroStyles = {
+  section: { background: '#fff', borderBottom: '1px solid var(--divider)' },
+  inner: {
+    maxWidth: 1200, margin: '0 auto', padding: '72px 32px 64px',
+    display: 'grid', gridTemplateColumns: '1.05fr 0.95fr', gap: 64, alignItems: 'center',
+  },
+  text: { minWidth: 0 },
+  h1: {
+    fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 56, lineHeight: 1.05,
+    letterSpacing: '-0.01em', color: 'var(--fg-strong)', margin: '12px 0 4px',
+  },
+  lead: { fontSize: 18, lineHeight: 1.55, color: 'var(--fg-muted)', maxWidth: 520, margin: '8px 0 24px' },
+  ctas: { display: 'flex', alignItems: 'center', gap: 12, marginBottom: 36 },
+  primary: {
+    fontFamily: 'var(--font-body)', fontSize: 15, fontWeight: 600, padding: '14px 26px',
+    border: 0, borderRadius: 999, background: 'var(--cyan-500)', color: '#fff',
+    cursor: 'pointer', boxShadow: '0 2px 6px rgba(32,38,90,0.08)',
+  },
+  secondary: {
+    fontFamily: 'var(--font-body)', fontSize: 15, fontWeight: 600, padding: '12px 22px',
+    border: '1.5px solid var(--border-strong)', borderRadius: 999, background: '#fff',
+    color: 'var(--fg-strong)', textDecoration: 'none',
+    display: 'inline-flex', alignItems: 'center', gap: 8,
+  },
+  proof: { display: 'flex', alignItems: 'stretch', gap: 24 },
+  media: { position: 'relative' },
+  mediaCard: {
+    position: 'relative', borderRadius: 16, overflow: 'visible',
+    boxShadow: '0 24px 48px -16px rgba(32,38,90,0.18), 0 8px 16px -8px rgba(32,38,90,0.08)',
+  },
+  mediaImg: {
+    aspectRatio: '4 / 5', borderRadius: 16,
+    background: 'linear-gradient(135deg, #4A7FB2, #20265A 70%, #163A6D)',
+    display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+    gap: 12,
+  },
+  mediaCaption: { fontSize: 12, color: 'rgba(255,255,255,0.7)' },
+  floatChip: {
+    position: 'absolute', bottom: -16, left: -16,
+    background: '#fff', padding: '10px 16px', borderRadius: 999,
+    boxShadow: '0 8px 24px -8px rgba(32,38,90,0.16)',
+    fontSize: 13, fontWeight: 600, color: 'var(--fg-strong)',
+    display: 'inline-flex', alignItems: 'center', gap: 8,
+  },
+};
+
+
+// ===== Physicians.jsx =====
+// Physicians.jsx — "Meet our physicians" grid.
+// 4 board-certified surgeons from the live site, with the
+// distinctive "FirstName **LastName**" emphasis treatment.
+
+const PHYSICIANS = [
+  {
+    first: 'Keith P.', last: 'Aldrich', creds: 'M.D.',
+    title: 'Board-Certified Orthopedic Surgeon',
+    blurb: 'Sees patients with general orthopedic conditions and specializes in the hand and upper extremities.',
+    cta: 'call',
+  },
+  {
+    first: 'Stefan', last: 'Kreuzer', creds: 'M.D., MSc',
+    title: 'Board-Certified Orthopedic Surgeon',
+    blurb: 'Specializes in outpatient total joint replacement and computer-assisted joint replacement surgery.',
+    cta: 'call',
+  },
+  {
+    first: 'Dharmpal', last: 'Vansadia', creds: 'D.O.',
+    title: 'Board-Certified Orthopedic Surgeon',
+    blurb: 'Specializes in total joint replacement, arthroscopy, and sports-related injuries — particularly ACL and rotator cuff.',
+    cta: 'book',
+  },
+  {
+    first: 'Anthony', last: 'Gualtieri', creds: 'M.D.',
+    title: 'Board-Certified Orthopedic Surgeon',
+    blurb: 'Specializes in total joint replacement of the hip and knee, revision surgery, and fracture care.',
+    cta: 'call',
+  },
+];
+
+function PhysiciansSection({ onRequest }) {
+  return (
+    <section style={physStyles.section}>
+      <div style={physStyles.inner}>
+        <header style={physStyles.head}>
+          <p className="eyebrow" style={{ margin: 0 }}>Our Team</p>
+          <h2 style={physStyles.h2}>Meet our physicians</h2>
+          <hr className="gradient-rule" />
+          <p style={physStyles.lead}>
+            Board-certified orthopedic surgeons, physician assistants, and licensed physical therapists — the minds
+            behind our individualized approach to treatment, rehabilitation, and surgical intervention.
+          </p>
+        </header>
+
+        <div style={physStyles.grid}>
+          {PHYSICIANS.map((p) => (
+            <PhysicianCard key={p.last} physician={p} onRequest={onRequest} />
+          ))}
+        </div>
+
+        <div style={physStyles.allLink}>
+          <a href="#" style={{ color: 'var(--cyan-700)', fontSize: 14, fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+            Learn more about our team <i data-lucide="chevron-right" style={{ width: 14, height: 14 }}></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PhysicianCard({ physician, onRequest }) {
+  const [hover, setHover] = React.useState(false);
+  return (
+    <article
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{ ...physStyles.card, transform: hover ? 'translateY(-2px)' : 'translateY(0)', boxShadow: hover ? '0 8px 24px -8px rgba(32,38,90,0.16), 0 2px 6px rgba(32,38,90,0.06)' : '0 2px 6px rgba(32,38,90,0.06), 0 1px 2px rgba(32,38,90,0.04)' }}
+    >
+      <div style={physStyles.portrait}>
+        <i data-lucide="user-round" style={{ width: 56, height: 56, color: '#fff', opacity: 0.85 }}></i>
+      </div>
+      <div style={physStyles.cardBody}>
+        <div style={{ fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 26, lineHeight: 1.1, color: 'var(--fg-strong)' }}>
+          {physician.first} <strong style={{ fontWeight: 600 }}>{physician.last}</strong>
+        </div>
+        <div style={physStyles.creds}>{physician.creds}</div>
+        <div style={physStyles.title}>{physician.title}</div>
+        <p style={physStyles.blurb}>{physician.blurb}</p>
+        <div style={{ marginTop: 'auto', display: 'flex', gap: 8 }}>
+          {physician.cta === 'book' ? (
+            <button onClick={onRequest} style={physStyles.bookBtn}>Book online</button>
+          ) : (
+            <a href="tel:3465717500" style={physStyles.callBtn}>
+              <i data-lucide="phone" style={{ width: 11, height: 11 }}></i> (346) 571-7500
+            </a>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+}
+
+const physStyles = {
+  section: { background: 'var(--bg-soft)' },
+  inner: { maxWidth: 1200, margin: '0 auto', padding: '88px 32px' },
+  head: { textAlign: 'center', maxWidth: 680, margin: '0 auto 40px' },
+  h2: { fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 44, color: 'var(--fg-strong)', margin: '8px 0 0' },
+  lead: { fontSize: 17, lineHeight: 1.55, color: 'var(--fg-muted)', margin: '14px auto 0', maxWidth: 540 },
+  grid: { display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 },
+  card: {
+    background: '#fff', border: '1px solid var(--border)', borderRadius: 12,
+    overflow: 'hidden', display: 'flex', flexDirection: 'column',
+    transition: 'transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out)',
+    cursor: 'pointer',
+  },
+  portrait: {
+    aspectRatio: '1 / 1', background: 'linear-gradient(135deg, #4A7FB2, #20265A 75%, #163A6D)',
+    display: 'flex', alignItems: 'center', justifyContent: 'center',
+  },
+  cardBody: { padding: '18px 20px 20px', display: 'flex', flexDirection: 'column', gap: 6, flex: 1 },
+  creds: { fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--fg-subtle)' },
+  title: { fontSize: 12, color: 'var(--brand-strong)', fontWeight: 500 },
+  blurb: { fontSize: 13, lineHeight: 1.5, color: 'var(--fg-muted)', margin: '6px 0 14px' },
+  bookBtn: { fontFamily: 'var(--font-body)', fontSize: 12, fontWeight: 600, padding: '8px 14px', border: 0, borderRadius: 999, background: 'var(--cyan-500)', color: '#fff', cursor: 'pointer' },
+  callBtn: { fontFamily: 'var(--font-body)', fontSize: 12, fontWeight: 500, padding: '8px 12px', border: '1px solid var(--border)', borderRadius: 999, background: '#fff', color: 'var(--fg-strong)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 5 },
+  allLink: { textAlign: 'center', marginTop: 36 },
+};
+
+
+// ===== Procedures.jsx =====
+// Procedures.jsx — anatomy-organized procedure tiles.
+// Order matches the live site: Hip, Knee, Shoulder, Elbow,
+// Sports Medicine, Physical Therapy.
+
+const PROCEDURES = [
+  { id: 'hip',      title: 'Hip procedures',      icon: 'bone',
+    blurb: 'Traditional and outpatient total hip replacements, total hip revisions, and total hip arthroplasty.' },
+  { id: 'knee',     title: 'Knee procedures',     icon: 'activity',
+    blurb: 'Unicompartmental knee replacement, knee resurfacing, total knee replacements, and total knee revisions.' },
+  { id: 'shoulder', title: 'Shoulder procedures', icon: 'move-up-right',
+    blurb: 'Shoulder replacement, rotator cuff repair, labral tears, and overuse conditions.' },
+  { id: 'elbow',    title: 'Elbow procedures',    icon: 'move-right',
+    blurb: 'Medial epicondyle release (golfer’s elbow), lateral epicondylitis release (tennis elbow), and total elbow arthroplasty.' },
+  { id: 'sports',   title: 'Sports medicine',     icon: 'heart-pulse',
+    blurb: 'Surgical and non-surgical care for exercise-related injuries to the hips, knees, shoulders, and elbows.' },
+  { id: 'pt',       title: 'Physical therapy',    icon: 'hand-helping',
+    blurb: 'Non-surgical treatment plans and individualized post-surgery rehabilitation, in-house with our PTs.' },
+];
+
+function ProceduresSection({ onSelect, selected }) {
+  return (
+    <section style={procStyles.section}>
+      <div style={procStyles.inner}>
+        <header style={procStyles.head}>
+          <p className="eyebrow" style={{ margin: 0 }}>Procedures &amp; Conditions</p>
+          <h2 style={procStyles.h2}>Our innovative orthopedic procedures</h2>
+          <hr className="gradient-rule" />
+        </header>
+
+        <div style={procStyles.grid}>
+          {PROCEDURES.map((p) => (
+            <ProcedureTile
+              key={p.id}
+              proc={p}
+              active={selected === p.id}
+              onClick={() => onSelect && onSelect(p.id)}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ProcedureTile({ proc, active, onClick }) {
+  const [hover, setHover] = React.useState(false);
+  const lifted = hover || active;
+  return (
+    <article
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      onClick={onClick}
+      style={{ ...procStyles.tile, transform: lifted ? 'translateY(-3px)' : 'translateY(0)', boxShadow: lifted ? '0 24px 48px -16px rgba(32,38,90,0.18), 0 8px 16px -8px rgba(32,38,90,0.08)' : '0 2px 6px rgba(32,38,90,0.06), 0 1px 2px rgba(32,38,90,0.04)' }}
+    >
+      <div style={procStyles.image}>
+        <i data-lucide={proc.icon} style={{ width: 56, height: 56, color: '#fff', opacity: 0.7, transform: lifted ? 'scale(1.06)' : 'scale(1)', transition: 'transform var(--dur-base) var(--ease-out)' }}></i>
+      </div>
+      <div style={procStyles.body}>
+        <h3 style={procStyles.title}>{proc.title}</h3>
+        <hr style={{ ...procStyles.rule, width: lifted ? 56 : 32 }} />
+        <p style={procStyles.blurb}>{proc.blurb}</p>
+        <div style={procStyles.more}>
+          Learn more <i data-lucide="chevron-right" style={{ width: 12, height: 12 }}></i>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+const procStyles = {
+  section: { background: '#fff' },
+  inner: { maxWidth: 1200, margin: '0 auto', padding: '88px 32px' },
+  head: { maxWidth: 720, margin: '0 0 40px' },
+  h2: { fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 44, color: 'var(--fg-strong)', margin: '8px 0 0' },
+  grid: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 },
+  tile: {
+    background: '#fff', border: '1px solid var(--border)', borderRadius: 12,
+    overflow: 'hidden', display: 'flex', flexDirection: 'column', cursor: 'pointer',
+    transition: 'transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out)',
+  },
+  image: {
+    aspectRatio: '4 / 3',
+    background: 'linear-gradient(135deg, var(--neutral-200), var(--neutral-300))',
+    display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden',
+  },
+  body: { padding: '20px 22px 22px', display: 'flex', flexDirection: 'column' },
+  title: { fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 22, color: 'var(--fg-strong)', margin: 0 },
+  rule: { border: 0, height: 3, borderRadius: 2, background: 'var(--inov8-gradient)', margin: '8px 0 10px', transition: 'width var(--dur-base) var(--ease-out)' },
+  blurb: { fontSize: 14, lineHeight: 1.5, color: 'var(--fg-muted)', margin: '0 0 14px' },
+  more: { fontSize: 13, fontWeight: 600, color: 'var(--cyan-700)', display: 'inline-flex', alignItems: 'center', gap: 4 },
+};
+
+
+// ===== Mission.jsx =====
+// Mission.jsx — copy block + tech list, on a soft surface
+// with the dark-CTA block tucked below.
+
+const TECH = [
+  'Corin OPS',
+  'THINK Surgical TSolution One®',
+  'OrthoSensor VERASENSE™',
+  'Bodycad Unicompartmental Knee System',
+  'Intellijoint HIP®',
+];
+
+function MissionSection({ onRequest }) {
+  return (
+    <section style={missionStyles.section}>
+      <div style={missionStyles.inner}>
+        <div style={missionStyles.text}>
+          <p className="eyebrow" style={{ margin: 0 }}>Our Mission</p>
+          <h2 style={missionStyles.h2}>"Innovate" isn’t just our namesake — it’s a way of life.</h2>
+          <hr className="gradient-rule" />
+          <p style={missionStyles.lead}>
+            We provide Texas residents with premier orthopedic care through cutting-edge surgical interventions
+            and the latest rehabilitation protocols. From check-in to recovery, every part of your experience
+            with INOV8 is efficient and patient-focused.
+          </p>
+          <p style={missionStyles.body}>
+            For total joint replacement, we utilize the latest advancements in surgical technology so we can
+            perform complex procedures — like total joint replacements — as outpatient procedures.
+          </p>
+        </div>
+
+        <aside style={missionStyles.techCard}>
+          <p className="eyebrow" style={{ margin: 0, color: 'var(--cyan-600)' }}>Surgical technology</p>
+          <h3 style={missionStyles.techTitle}>What we operate with</h3>
+          <ul style={missionStyles.techList}>
+            {TECH.map((t) => (
+              <li key={t} style={missionStyles.techItem}>
+                <i data-lucide="check" style={{ width: 16, height: 16, color: 'var(--teal-500)', flex: '0 0 16px', marginTop: 2 }}></i>
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+          <p style={missionStyles.techFoot}>Outpatient joint replacement reduces infection risk and improves overall recovery.</p>
+        </aside>
+      </div>
+
+      <div style={missionStyles.ctaWrap}>
+        <div style={missionStyles.cta}>
+          <div style={missionStyles.ctaGradient}></div>
+          <div style={missionStyles.ctaInner}>
+            <div>
+              <p className="eyebrow" style={{ margin: 0, color: 'var(--cyan-300)' }}>Schedule</p>
+              <h3 style={missionStyles.ctaTitle}>Ready to move without pain?</h3>
+              <p style={missionStyles.ctaCopy}>Request an appointment and a coordinator will reach out within one business day.</p>
+            </div>
+            <div style={{ display: 'flex', gap: 10 }}>
+              <button onClick={onRequest} style={missionStyles.ctaPrimary}>Request appointment</button>
+              <a href="tel:3465717500" style={missionStyles.ctaSecondary}>
+                <i data-lucide="phone" style={{ width: 13, height: 13 }}></i> (346) 571-7500
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const missionStyles = {
+  section: { background: 'var(--bg-soft)' },
+  inner: {
+    maxWidth: 1200, margin: '0 auto', padding: '88px 32px 40px',
+    display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 64, alignItems: 'start',
+  },
+  text: { minWidth: 0 },
+  h2: { fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 40, color: 'var(--fg-strong)', margin: '8px 0 0', lineHeight: 1.15 },
+  lead: { fontSize: 18, lineHeight: 1.55, color: 'var(--fg-muted)', margin: '8px 0 16px' },
+  body: { fontSize: 15, lineHeight: 1.6, color: 'var(--fg)', margin: 0 },
+
+  techCard: {
+    background: '#fff', border: '1px solid var(--border)', borderRadius: 16,
+    padding: 28, boxShadow: '0 8px 24px -8px rgba(32,38,90,0.08)',
+  },
+  techTitle: { fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 22, color: 'var(--fg-strong)', margin: '6px 0 14px' },
+  techList: { listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 10 },
+  techItem: { display: 'flex', gap: 10, fontSize: 14, color: 'var(--fg)', lineHeight: 1.4 },
+  techFoot: { fontSize: 12, color: 'var(--fg-subtle)', margin: '16px 0 0', borderTop: '1px solid var(--divider)', paddingTop: 14, lineHeight: 1.5 },
+
+  ctaWrap: { maxWidth: 1200, margin: '0 auto', padding: '24px 32px 88px' },
+  cta: { position: 'relative', overflow: 'hidden', borderRadius: 16, background: 'var(--navy-900)' },
+  ctaGradient: { position: 'absolute', inset: 0, background: 'var(--inov8-gradient)', opacity: 0.16 },
+  ctaInner: {
+    position: 'relative', padding: '36px 40px', display: 'flex', alignItems: 'center',
+    justifyContent: 'space-between', gap: 32, flexWrap: 'wrap',
+  },
+  ctaTitle: { fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 32, color: '#fff', margin: '6px 0 4px' },
+  ctaCopy: { fontSize: 14, color: 'rgba(255,255,255,0.78)', margin: 0, maxWidth: 420 },
+  ctaPrimary: { fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 600, padding: '12px 22px', border: 0, borderRadius: 999, background: '#fff', color: 'var(--navy-900)', cursor: 'pointer' },
+  ctaSecondary: { fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 600, padding: '12px 22px', border: '1.5px solid rgba(255,255,255,0.45)', borderRadius: 999, background: 'transparent', color: '#fff', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8 },
+};
+
+
+// ===== Appointment.jsx =====
+// Appointment.jsx — request-appointment form, mirrors the form on
+// the live site. Renders fully interactive (state local) — submits
+// flip to a success state and back via a "Request another" button.
+
+function AppointmentSection() {
+  const [state, setState] = React.useState({
+    first: '', last: '', phone: '', email: '',
+    insurance: '', date: '', referred: '', message: '',
+    consent: false,
+  });
+  const [submitted, setSubmitted] = React.useState(false);
+  const set = (k) => (e) => setState((s) => ({ ...s, [k]: e.target ? (e.target.type === 'checkbox' ? e.target.checked : e.target.value) : e }));
+
+  const submit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  return (
+    <section id="appointment" style={apStyles.section}>
+      <div style={apStyles.inner}>
+        <header style={apStyles.head}>
+          <p className="eyebrow" style={{ margin: 0 }}>Get Started</p>
+          <h2 style={apStyles.h2}>Schedule your appointment</h2>
+          <hr className="gradient-rule" />
+          <p style={apStyles.lead}>Use the form below and a coordinator will reach out within one business day.</p>
+        </header>
+
+        <div style={apStyles.card}>
+          {submitted ? (
+            <div style={apStyles.success}>
+              <div style={apStyles.successIcon}>
+                <i data-lucide="check" style={{ width: 28, height: 28, color: '#fff' }}></i>
+              </div>
+              <h3 style={apStyles.successTitle}>Request received</h3>
+              <p style={apStyles.successCopy}>
+                Thanks{state.first ? `, ${state.first}` : ''}. A coordinator from INOV8 Orthopedics will follow up at
+                {state.email ? <strong style={{ color: 'var(--fg-strong)' }}> {state.email}</strong> : ' the contact you provided'} within one business day.
+              </p>
+              <button onClick={() => { setSubmitted(false); setState({ first:'',last:'',phone:'',email:'',insurance:'',date:'',referred:'',message:'',consent:false }); }} style={apStyles.againBtn}>
+                Request another
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={submit} style={apStyles.form}>
+              <Field label="First name" required>
+                <input value={state.first} onChange={set('first')} style={apStyles.input} />
+              </Field>
+              <Field label="Last name" required>
+                <input value={state.last} onChange={set('last')} style={apStyles.input} />
+              </Field>
+              <Field label="Phone" required>
+                <input type="tel" value={state.phone} onChange={set('phone')} style={apStyles.input} />
+              </Field>
+              <Field label="Email" required>
+                <input type="email" value={state.email} onChange={set('email')} style={apStyles.input} />
+              </Field>
+              <Field label="Insurance provider">
+                <select value={state.insurance} onChange={set('insurance')} style={apStyles.input}>
+                  <option value="">Select your provider</option>
+                  <option>Blue Cross Blue Shield</option>
+                  <option>Aetna</option>
+                  <option>UnitedHealthcare</option>
+                  <option>Cigna</option>
+                  <option>Humana</option>
+                  <option>Self-pay</option>
+                  <option>Other</option>
+                </select>
+              </Field>
+              <Field label="Preferred date">
+                <input type="text" placeholder="MM / DD / YYYY" value={state.date} onChange={set('date')} style={apStyles.input} />
+              </Field>
+              <Field label="Referred by" full>
+                <input value={state.referred} onChange={set('referred')} placeholder="Physician, friend, online search…" style={apStyles.input} />
+              </Field>
+              <Field label="What can we do for you?" required full>
+                <textarea value={state.message} onChange={set('message')} rows={4} style={{ ...apStyles.input, resize: 'vertical' }} />
+              </Field>
+              <label style={apStyles.consent}>
+                <input type="checkbox" checked={state.consent} onChange={set('consent')} style={{ accentColor: 'var(--cyan-500)', width: 16, height: 16 }} />
+                <span>I agree to be contacted by INOV8 Orthopedics and have read the <a href="#" style={{ color: 'var(--cyan-700)' }}>Privacy Policy</a>.</span>
+              </label>
+              <div style={apStyles.actions}>
+                <button type="submit" style={apStyles.submit}>Request appointment</button>
+                <p style={apStyles.disclaimer}>Required fields are marked with <span style={{ color: 'var(--danger-500)' }}>*</span>. This form does not transmit protected health information.</p>
+              </div>
+            </form>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Field({ label, required, full, children }) {
+  return (
+    <label style={{ display: 'flex', flexDirection: 'column', gap: 6, gridColumn: full ? '1 / -1' : 'auto' }}>
+      <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--fg-strong)' }}>
+        {label}{required && <span style={{ color: 'var(--danger-500)', marginLeft: 3 }}>*</span>}
+      </span>
+      {children}
+    </label>
+  );
+}
+
+const apStyles = {
+  section: { background: '#fff' },
+  inner: { maxWidth: 980, margin: '0 auto', padding: '88px 32px' },
+  head: { maxWidth: 640, margin: '0 0 36px' },
+  h2: { fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 40, color: 'var(--fg-strong)', margin: '8px 0 0' },
+  lead: { fontSize: 17, lineHeight: 1.55, color: 'var(--fg-muted)', margin: '12px 0 0' },
+  card: { background: 'var(--bg-soft)', border: '1px solid var(--border)', borderRadius: 16, padding: 32 },
+  form: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 },
+  input: {
+    fontFamily: 'var(--font-body)', fontSize: 14, padding: '11px 13px',
+    border: '1px solid var(--border)', borderRadius: 6, outline: 'none', color: 'var(--fg)',
+    background: '#fff', width: '100%', boxSizing: 'border-box',
+  },
+  consent: { gridColumn: '1 / -1', display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 13, color: 'var(--fg)', lineHeight: 1.45, marginTop: 4 },
+  actions: { gridColumn: '1 / -1', display: 'flex', alignItems: 'center', gap: 18, flexWrap: 'wrap', marginTop: 8 },
+  submit: {
+    fontFamily: 'var(--font-body)', fontSize: 15, fontWeight: 600,
+    padding: '14px 28px', border: 0, borderRadius: 999, background: 'var(--cyan-500)',
+    color: '#fff', cursor: 'pointer', boxShadow: '0 2px 6px rgba(32,38,90,0.06)',
+  },
+  disclaimer: { fontSize: 12, color: 'var(--fg-subtle)', margin: 0, lineHeight: 1.45, maxWidth: 420 },
+
+  success: { textAlign: 'center', padding: '24px 12px 12px' },
+  successIcon: { width: 56, height: 56, borderRadius: '50%', background: 'var(--success-500)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 },
+  successTitle: { fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 28, color: 'var(--fg-strong)', margin: '0 0 8px' },
+  successCopy: { fontSize: 15, color: 'var(--fg-muted)', maxWidth: 460, margin: '0 auto 18px', lineHeight: 1.5 },
+  againBtn: { fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, padding: '10px 18px', border: '1px solid var(--border-strong)', borderRadius: 999, background: '#fff', color: 'var(--fg-strong)', cursor: 'pointer' },
+};
+
+
+// ===== LocationAndFooter.jsx =====
+// Location.jsx + Footer.jsx — final sections of the page.
+
+function LocationSection() {
+  return (
+    <section style={locStyles.section}>
+      <div style={locStyles.inner}>
+        <header style={locStyles.head}>
+          <p className="eyebrow" style={{ margin: 0 }}>Visit Us</p>
+          <h2 style={locStyles.h2}>INOV8 Orthopedics location</h2>
+          <hr className="gradient-rule" />
+        </header>
+
+        <div style={locStyles.grid}>
+          <div style={locStyles.map}>
+            <div style={locStyles.mapInner}>
+              <i data-lucide="map-pin" style={{ width: 40, height: 40, color: 'var(--cyan-500)' }}></i>
+              <div style={{ fontSize: 12, color: 'var(--fg-subtle)', marginTop: 6 }}>Map placeholder · Google Maps embed</div>
+            </div>
+          </div>
+
+          <aside style={locStyles.card}>
+            <h3 style={locStyles.cardTitle}>Houston</h3>
+            <div style={locStyles.row}>
+              <i data-lucide="map-pin" style={{ width: 16, height: 16, color: 'var(--cyan-500)', marginTop: 3, flex: '0 0 16px' }}></i>
+              <div>
+                <div style={{ fontWeight: 500, color: 'var(--fg-strong)' }}>10496 Katy Fwy, Suite 101</div>
+                <div style={{ color: 'var(--fg-muted)' }}>Houston, TX 77043</div>
+                <a href="#" style={locStyles.link}>Get directions <i data-lucide="external-link" style={{ width: 12, height: 12 }}></i></a>
+              </div>
+            </div>
+            <div style={locStyles.row}>
+              <i data-lucide="phone" style={{ width: 16, height: 16, color: 'var(--cyan-500)', flex: '0 0 16px' }}></i>
+              <a href="tel:3465717500" style={{ color: 'var(--fg-strong)', fontWeight: 500, textDecoration: 'none' }}>(346) 571-7500</a>
+            </div>
+            <div style={locStyles.row}>
+              <i data-lucide="clock" style={{ width: 16, height: 16, color: 'var(--cyan-500)', marginTop: 3, flex: '0 0 16px' }}></i>
+              <div>
+                <div style={{ color: 'var(--fg-strong)', fontWeight: 500 }}>Monday – Friday</div>
+                <div style={{ color: 'var(--fg-muted)' }}>8:00 am – 5:00 pm</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const locStyles = {
+  section: { background: 'var(--bg-soft)' },
+  inner: { maxWidth: 1200, margin: '0 auto', padding: '88px 32px' },
+  head: { maxWidth: 640, margin: '0 0 32px' },
+  h2: { fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 40, color: 'var(--fg-strong)', margin: '8px 0 0' },
+  grid: { display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: 24 },
+  map: {
+    borderRadius: 16, overflow: 'hidden', border: '1px solid var(--border)',
+    background: 'linear-gradient(135deg, #E6F6FB, #DDE2EA)', minHeight: 280,
+    display: 'flex', alignItems: 'center', justifyContent: 'center',
+  },
+  mapInner: { textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' },
+  card: { background: '#fff', borderRadius: 16, border: '1px solid var(--border)', padding: 28, display: 'flex', flexDirection: 'column', gap: 16 },
+  cardTitle: { fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 24, color: 'var(--fg-strong)', margin: 0 },
+  row: { display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14, lineHeight: 1.5 },
+  link: { display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 13, color: 'var(--cyan-700)', textDecoration: 'none', fontWeight: 600, marginTop: 4 },
+};
+
+function Footer() {
+  return (
+    <footer style={footStyles.section}>
+      <div style={footStyles.inner}>
+        <div style={footStyles.brand}>
+          <img src={window.__resources.logo} alt="INOV8 Orthopedics" style={{ height: 44, filter: 'brightness(0) invert(1)' }} />
+          <p style={footStyles.tagline}>Innovative orthopedic care for exceptional patient outcomes.</p>
+          <div style={footStyles.social}>
+            <a href="https://www.facebook.com/inov8orthopedics" aria-label="Facebook" style={footStyles.socialIcon}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M13.5 21v-7.5h2.5l.4-3.1h-2.9V8.4c0-.9.25-1.5 1.55-1.5H16.5V4.1c-.28-.04-1.24-.12-2.36-.12-2.34 0-3.94 1.43-3.94 4.05v2.26H7.7v3.1h2.5V21h3.3Z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/inov8orthopedics/" aria-label="Instagram" style={footStyles.socialIcon}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <FooterCol title="Quick Links" links={['Home', 'About Us', 'Procedures & Conditions', 'Patients', 'Media', 'FAQ']} />
+        <FooterCol title="Procedures" links={['Hip', 'Knee', 'Shoulder', 'Elbow', 'Sports Medicine', 'Physical Therapy']} />
+
+        <div>
+          <p style={footStyles.colTitle}>Contact</p>
+          <ul style={footStyles.list}>
+            <li style={footStyles.contactLi}>10496 Katy Fwy, Suite 101<br/>Houston, TX 77043</li>
+            <li style={footStyles.contactLi}><a href="tel:3465717500" style={footStyles.link}>(346) 571-7500</a></li>
+            <li style={footStyles.contactLi}>Mon – Fri  8:00 am – 5:00 pm</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style={footStyles.legal}>
+        <div style={footStyles.legalInner}>
+          <span>© 2026 INOV8 Orthopedics</span>
+          <div style={{ display: 'flex', gap: 18 }}>
+            <a href="#" style={footStyles.legalLink}>Privacy Policy</a>
+            <a href="#" style={footStyles.legalLink}>Terms &amp; Conditions</a>
+            <a href="#" style={footStyles.legalLink}>Accessibility Statement</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function FooterCol({ title, links }) {
+  return (
+    <div>
+      <p style={footStyles.colTitle}>{title}</p>
+      <ul style={footStyles.list}>
+        {links.map((l) => (
+          <li key={l}><a href="#" style={footStyles.link}>{l}</a></li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+const footStyles = {
+  section: { background: 'var(--navy-900)', color: '#fff' },
+  inner: { maxWidth: 1200, margin: '0 auto', padding: '64px 32px 32px', display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr', gap: 40 },
+  brand: { display: 'flex', flexDirection: 'column', gap: 14 },
+  tagline: { fontSize: 14, color: 'rgba(255,255,255,0.7)', lineHeight: 1.5, maxWidth: 280, margin: 0 },
+  social: { display: 'flex', gap: 8, marginTop: 4 },
+  socialIcon: { width: 32, height: 32, borderRadius: 999, background: 'rgba(255,255,255,0.08)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: '#fff', textDecoration: 'none' },
+  colTitle: { fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--cyan-300)', margin: '0 0 14px' },
+  list: { listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 8 },
+  link: { color: 'rgba(255,255,255,0.85)', textDecoration: 'none', fontSize: 14 },
+  contactLi: { fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.5 },
+  legal: { borderTop: '1px solid rgba(255,255,255,0.1)', marginTop: 16 },
+  legalInner: { maxWidth: 1200, margin: '0 auto', padding: '20px 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: 12, color: 'rgba(255,255,255,0.55)', flexWrap: 'wrap', gap: 12 },
+  legalLink: { color: 'rgba(255,255,255,0.55)', textDecoration: 'none' },
+};
+
+
+    // ===== App =====
+    function App() {
+      const [activeNav, setActiveNav] = React.useState('home');
+      const [selectedProc, setSelectedProc] = React.useState(null);
+
+      const scrollToAppointment = () => {
+        const el = document.getElementById('appointment');
+        if (el) window.scrollTo({ top: el.offsetTop - 60, behavior: 'smooth' });
+      };
+
+      React.useEffect(() => {
+        if (window.lucide) window.lucide.createIcons();
+      });
+
+      return (
+        <div data-screen-label="01 INOV8 Orthopedics — Home">
+          <Header activeNav={activeNav} onNav={setActiveNav} onRequest={scrollToAppointment} />
+          <main>
+            <Hero onRequest={scrollToAppointment} />
+            <PhysiciansSection onRequest={scrollToAppointment} />
+            <ProceduresSection selected={selectedProc} onSelect={setSelectedProc} />
+            <MissionSection onRequest={scrollToAppointment} />
+            <AppointmentSection />
+            <LocationSection />
+          </main>
+          <Footer />
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('app'));
+    root.render(<App />);
+  </script>
+</body>
+</html>

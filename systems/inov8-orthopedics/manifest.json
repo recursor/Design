@@ -1,0 +1,560 @@
+{
+  "manifestVersion": 3,
+  "name": "INOV8 Orthopedics Design System",
+  "namespace": "INOV8OrthopedicsDesignSystem_137bbb",
+  "files": [
+    "INOV8 Orthopedics - Website.html",
+    "assets/notes/MIGRATION-REPORT.md",
+    "assets/notes/SKILL.from-standalone.md",
+    "components/ComponentsBadges/README.md",
+    "components/ComponentsButtons/README.md",
+    "components/ComponentsCtaBlock/README.md",
+    "components/ComponentsForms/README.md",
+    "components/ComponentsIcons/README.md",
+    "components/ComponentsInfoCard/README.md",
+    "components/ComponentsNav/README.md",
+    "components/ComponentsPhysicianCard/README.md",
+    "components/ComponentsProcedureCard/README.md",
+    "components/Index/Appointment.jsx",
+    "components/Index/Header.jsx",
+    "components/Index/Hero.jsx",
+    "components/Index/LocationAndFooter.jsx",
+    "components/Index/Mission.jsx",
+    "components/Index/Physicians.jsx",
+    "components/Index/Procedures.jsx",
+    "components/Index/README.md",
+    "components/bundle.css",
+    "components/bundle.js",
+    "components/lib/react-dom.production.min.js",
+    "components/lib/react.production.min.js",
+    "docs/_ds_bundle.js",
+    "docs/_ds_manifest.json",
+    "preview/brand-gradient-rule.html",
+    "preview/brand-gradient.html",
+    "preview/brand-logo-dark.html",
+    "preview/brand-logo.html",
+    "preview/brand-voice.html",
+    "preview/color-blue-navy.html",
+    "preview/color-cyan.html",
+    "preview/color-neutrals.html",
+    "preview/color-semantic.html",
+    "preview/color-teal.html",
+    "preview/spacing-radii.html",
+    "preview/spacing-scale.html",
+    "preview/spacing-shadows.html",
+    "preview/type-body.html",
+    "preview/type-display.html",
+    "preview/type-eyebrow.html",
+    "preview/type-name-emphasis.html",
+    "preview/type-scale.html",
+    "tokens.css",
+    "ui_kits/website/README.md",
+    "ui_kits/website/index-standalone.html"
+  ],
+  "libraries": [
+    {
+      "name": "react",
+      "version": "18.3.1",
+      "global": "React",
+      "file": "components/lib/react.production.min.js"
+    },
+    {
+      "name": "react-dom",
+      "version": "18.3.1",
+      "global": "ReactDOM",
+      "file": "components/lib/react-dom.production.min.js"
+    }
+  ],
+  "components": [
+    {
+      "name": "ComponentsBadges",
+      "group": "Components",
+      "summary": "Pill chips, status dots, filters",
+      "page": true
+    },
+    {
+      "name": "ComponentsButtons",
+      "group": "Components",
+      "summary": "Pill CTAs · primary, secondary, ghost",
+      "page": true
+    },
+    {
+      "name": "ComponentsCtaBlock",
+      "group": "Components",
+      "summary": "Navy + gradient wash",
+      "page": true
+    },
+    {
+      "name": "ComponentsForms",
+      "group": "Components",
+      "summary": "Inputs, select, focus, checkbox",
+      "page": true
+    },
+    {
+      "name": "ComponentsIcons",
+      "group": "Components",
+      "summary": "Lucide · 1.5px stroke",
+      "page": true
+    },
+    {
+      "name": "ComponentsInfoCard",
+      "group": "Components",
+      "summary": "Contact / hours block",
+      "page": true
+    },
+    {
+      "name": "ComponentsNav",
+      "group": "Components",
+      "summary": "Logo + utility row + primary nav",
+      "page": true
+    },
+    {
+      "name": "ComponentsPhysicianCard",
+      "group": "Components",
+      "summary": "Portrait · name · CTAs",
+      "page": true
+    },
+    {
+      "name": "ComponentsProcedureCard",
+      "group": "Components",
+      "summary": "Whole card is the link",
+      "page": true
+    },
+    {
+      "name": "Index",
+      "group": "UI Kit — Website",
+      "summary": "inov8ortho.com recreation — header through procedure grid",
+      "page": true
+    }
+  ],
+  "lastChange": {
+    "by": "Migration",
+    "via": "standalone export",
+    "at": "2026-09-17T18:29:19.930Z",
+    "note": "migrated from the standalone version",
+    "source": "claude-design",
+    "authoredIn": "spa"
+  },
+  "assetGroups": [
+    {
+      "name": "Logos",
+      "files": [
+        {
+          "path": "assets/Logos/inov8-logo.png",
+          "id": "43c11c3403fb55b253a7b1e246e8e8df"
+        }
+      ]
+    },
+    {
+      "name": "Uploads",
+      "files": [
+        {
+          "path": "assets/Uploads/INOV8_gradient_cmyk.jpg",
+          "id": "a72433fe906f712c27fde1e66d157aaa"
+        },
+        {
+          "path": "assets/Uploads/INOV8_gradient_cmyk.png",
+          "id": "43c11c3403fb55b253a7b1e246e8e8df"
+        },
+        {
+          "path": "assets/Uploads/pasted-1779482478009-0.png",
+          "id": "23f66faa6e0196175bdf0236aaa2a828"
+        },
+        {
+          "path": "assets/Uploads/pasted-1779482671071-0.png",
+          "id": "45627bf58954243f57e82cef8da3bcc0"
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "files": [
+        {
+          "path": "assets/inov8-logo.jpg",
+          "id": "a72433fe906f712c27fde1e66d157aaa"
+        },
+        {
+          "path": "assets/inov8-logo.png",
+          "id": "43c11c3403fb55b253a7b1e246e8e8df"
+        }
+      ]
+    },
+    {
+      "name": "notes"
+    },
+    {
+      "name": "scrap",
+      "files": [
+        {
+          "path": "assets/scrap/01-final-test.png",
+          "id": "abc9f2c51028a5bf57d50c4e841fe11e"
+        },
+        {
+          "path": "assets/scrap/01-find-override.png",
+          "id": "e13a61c9fb1cced55ba2c2d0ec1e382b"
+        },
+        {
+          "path": "assets/scrap/01-nav-attr.png",
+          "id": "e13a61c9fb1cced55ba2c2d0ec1e382b"
+        },
+        {
+          "path": "assets/scrap/01-nav-debug.png",
+          "id": "ac667d18537d27f66d9af9ab1d76fa40"
+        },
+        {
+          "path": "assets/scrap/01-nav-fix.png",
+          "id": "abc9f2c51028a5bf57d50c4e841fe11e"
+        },
+        {
+          "path": "assets/scrap/01-nav-state.png",
+          "id": "e13a61c9fb1cced55ba2c2d0ec1e382b"
+        },
+        {
+          "path": "assets/scrap/01-nav-state3.png",
+          "id": "e13a61c9fb1cced55ba2c2d0ec1e382b"
+        },
+        {
+          "path": "assets/scrap/01-nav-test2.png",
+          "id": "e13a61c9fb1cced55ba2c2d0ec1e382b"
+        },
+        {
+          "path": "assets/scrap/01-nav-test3.png",
+          "id": "e13a61c9fb1cced55ba2c2d0ec1e382b"
+        },
+        {
+          "path": "assets/scrap/02-final-test.png",
+          "id": "7f365e4e0b9acb3199db449c101490b2"
+        },
+        {
+          "path": "assets/scrap/02-find-override.png",
+          "id": "e13a61c9fb1cced55ba2c2d0ec1e382b"
+        },
+        {
+          "path": "assets/scrap/02-nav-attr.png",
+          "id": "e13a61c9fb1cced55ba2c2d0ec1e382b"
+        },
+        {
+          "path": "assets/scrap/02-nav-debug.png",
+          "id": "e13a61c9fb1cced55ba2c2d0ec1e382b"
+        },
+        {
+          "path": "assets/scrap/02-nav-fix.png",
+          "id": "e13a61c9fb1cced55ba2c2d0ec1e382b"
+        },
+        {
+          "path": "assets/scrap/02-nav-state.png",
+          "id": "e13a61c9fb1cced55ba2c2d0ec1e382b"
+        },
+        {
+          "path": "assets/scrap/02-nav-state3.png",
+          "id": "e13a61c9fb1cced55ba2c2d0ec1e382b"
+        },
+        {
+          "path": "assets/scrap/02-nav-test2.png",
+          "id": "e13a61c9fb1cced55ba2c2d0ec1e382b"
+        },
+        {
+          "path": "assets/scrap/02-nav-test3.png",
+          "id": "e13a61c9fb1cced55ba2c2d0ec1e382b"
+        },
+        {
+          "path": "assets/scrap/03-nav-fix.png",
+          "id": "ac667d18537d27f66d9af9ab1d76fa40"
+        },
+        {
+          "path": "assets/scrap/nav-test.png",
+          "id": "e13a61c9fb1cced55ba2c2d0ec1e382b"
+        },
+        {
+          "path": "assets/scrap/standalone-check.png",
+          "id": "7377f2cb870899793c76603e19e94233"
+        }
+      ]
+    }
+  ],
+  "storage": {
+    "files": {
+      "assets/Logos/inov8-logo.png": {
+        "store": "blob",
+        "id": "43c11c3403fb55b253a7b1e246e8e8df",
+        "sha256": "7a2ecb54f5421a34bef2815a207bad190086733113f2a94ee551059f1ed3ceff",
+        "bytes": 75723,
+        "type": "image/png",
+        "name": "inov8-logo.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/Uploads/INOV8_gradient_cmyk.jpg": {
+        "store": "blob",
+        "id": "a72433fe906f712c27fde1e66d157aaa",
+        "sha256": "7dfaf9cf73391492e0985d47f0e0fb5fe372ed7028a2cc03105527c4b712299b",
+        "bytes": 49039,
+        "type": "image/jpeg",
+        "name": "INOV8_gradient_cmyk.jpg",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/Uploads/INOV8_gradient_cmyk.png": {
+        "store": "blob",
+        "id": "43c11c3403fb55b253a7b1e246e8e8df",
+        "sha256": "7a2ecb54f5421a34bef2815a207bad190086733113f2a94ee551059f1ed3ceff",
+        "bytes": 75723,
+        "type": "image/png",
+        "name": "INOV8_gradient_cmyk.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/Uploads/pasted-1779482478009-0.png": {
+        "store": "blob",
+        "id": "23f66faa6e0196175bdf0236aaa2a828",
+        "sha256": "65154d2158feb6f0f7036a785360bb63c62103ea784a5fb79749e90810036d97",
+        "bytes": 57211,
+        "type": "image/png",
+        "name": "pasted-1779482478009-0.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/Uploads/pasted-1779482671071-0.png": {
+        "store": "blob",
+        "id": "45627bf58954243f57e82cef8da3bcc0",
+        "sha256": "b14927569dc922369896b088aef6612333848fa2356ea405801ea61a8fde7210",
+        "bytes": 37345,
+        "type": "image/png",
+        "name": "pasted-1779482671071-0.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/inov8-logo.jpg": {
+        "store": "blob",
+        "id": "a72433fe906f712c27fde1e66d157aaa",
+        "sha256": "7dfaf9cf73391492e0985d47f0e0fb5fe372ed7028a2cc03105527c4b712299b",
+        "bytes": 49039,
+        "type": "image/jpeg",
+        "name": "inov8-logo.jpg",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/inov8-logo.png": {
+        "store": "blob",
+        "id": "43c11c3403fb55b253a7b1e246e8e8df",
+        "sha256": "7a2ecb54f5421a34bef2815a207bad190086733113f2a94ee551059f1ed3ceff",
+        "bytes": 75723,
+        "type": "image/png",
+        "name": "inov8-logo.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/01-final-test.png": {
+        "store": "blob",
+        "id": "abc9f2c51028a5bf57d50c4e841fe11e",
+        "sha256": "9701105cabe391eba9f06e36fb73c39c8919495d9cd5832c1352fe4229744083",
+        "bytes": 58879,
+        "type": "image/png",
+        "name": "01-final-test.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/01-find-override.png": {
+        "store": "blob",
+        "id": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+        "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+        "bytes": 58869,
+        "type": "image/png",
+        "name": "01-find-override.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/01-nav-attr.png": {
+        "store": "blob",
+        "id": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+        "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+        "bytes": 58869,
+        "type": "image/png",
+        "name": "01-nav-attr.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/01-nav-debug.png": {
+        "store": "blob",
+        "id": "ac667d18537d27f66d9af9ab1d76fa40",
+        "sha256": "8085f9356ca66b02df6075833b3b8efec32adf0fc819655b9ecd0e9d2ab964de",
+        "bytes": 58919,
+        "type": "image/png",
+        "name": "01-nav-debug.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/01-nav-fix.png": {
+        "store": "blob",
+        "id": "abc9f2c51028a5bf57d50c4e841fe11e",
+        "sha256": "9701105cabe391eba9f06e36fb73c39c8919495d9cd5832c1352fe4229744083",
+        "bytes": 58879,
+        "type": "image/png",
+        "name": "01-nav-fix.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/01-nav-state.png": {
+        "store": "blob",
+        "id": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+        "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+        "bytes": 58869,
+        "type": "image/png",
+        "name": "01-nav-state.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/01-nav-state3.png": {
+        "store": "blob",
+        "id": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+        "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+        "bytes": 58869,
+        "type": "image/png",
+        "name": "01-nav-state3.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/01-nav-test2.png": {
+        "store": "blob",
+        "id": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+        "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+        "bytes": 58869,
+        "type": "image/png",
+        "name": "01-nav-test2.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/01-nav-test3.png": {
+        "store": "blob",
+        "id": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+        "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+        "bytes": 58869,
+        "type": "image/png",
+        "name": "01-nav-test3.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/02-final-test.png": {
+        "store": "blob",
+        "id": "7f365e4e0b9acb3199db449c101490b2",
+        "sha256": "eb984197100d2344976a24ce347ceedc657ae6cb53bf8559a8e606f40fb5d686",
+        "bytes": 58899,
+        "type": "image/png",
+        "name": "02-final-test.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/02-find-override.png": {
+        "store": "blob",
+        "id": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+        "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+        "bytes": 58869,
+        "type": "image/png",
+        "name": "02-find-override.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/02-nav-attr.png": {
+        "store": "blob",
+        "id": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+        "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+        "bytes": 58869,
+        "type": "image/png",
+        "name": "02-nav-attr.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/02-nav-debug.png": {
+        "store": "blob",
+        "id": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+        "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+        "bytes": 58869,
+        "type": "image/png",
+        "name": "02-nav-debug.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/02-nav-fix.png": {
+        "store": "blob",
+        "id": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+        "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+        "bytes": 58869,
+        "type": "image/png",
+        "name": "02-nav-fix.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/02-nav-state.png": {
+        "store": "blob",
+        "id": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+        "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+        "bytes": 58869,
+        "type": "image/png",
+        "name": "02-nav-state.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/02-nav-state3.png": {
+        "store": "blob",
+        "id": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+        "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+        "bytes": 58869,
+        "type": "image/png",
+        "name": "02-nav-state3.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/02-nav-test2.png": {
+        "store": "blob",
+        "id": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+        "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+        "bytes": 58869,
+        "type": "image/png",
+        "name": "02-nav-test2.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/02-nav-test3.png": {
+        "store": "blob",
+        "id": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+        "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+        "bytes": 58869,
+        "type": "image/png",
+        "name": "02-nav-test3.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/03-nav-fix.png": {
+        "store": "blob",
+        "id": "ac667d18537d27f66d9af9ab1d76fa40",
+        "sha256": "8085f9356ca66b02df6075833b3b8efec32adf0fc819655b9ecd0e9d2ab964de",
+        "bytes": 58919,
+        "type": "image/png",
+        "name": "03-nav-fix.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/nav-test.png": {
+        "store": "blob",
+        "id": "e13a61c9fb1cced55ba2c2d0ec1e382b",
+        "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
+        "bytes": 58869,
+        "type": "image/png",
+        "name": "nav-test.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      },
+      "assets/scrap/standalone-check.png": {
+        "store": "blob",
+        "id": "7377f2cb870899793c76603e19e94233",
+        "sha256": "6a970de069bb810ca90391f3c4d4f301e099f887ae193d421e4173ae905b6a5c",
+        "bytes": 27894,
+        "type": "image/png",
+        "name": "standalone-check.png",
+        "addedAt": "2026-09-17T18:29:19.930Z",
+        "via": "standalone export"
+      }
+    },
+    "blobBytesUsed": 482778
+  }
+}
