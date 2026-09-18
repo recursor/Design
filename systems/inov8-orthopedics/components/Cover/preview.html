@@ -1,0 +1,78 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>INOV8 Orthopedics</title>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  .cover { display: block; width: 960px; height: 288px; }
+
+  /* every fill and corner is a token */
+  .ground   { fill: var(--bg); }
+  .accent   { fill: var(--accent); }        /* teal-500  */
+  .brand    { fill: var(--brand); }         /* cyan-500  */
+  .strong   { fill: var(--brand-strong); }  /* blue-500  */
+  .deep     { fill: var(--brand-deep); }    /* navy-900  */
+  .tint     { fill: var(--cyan-200); }
+  .block    { rx: var(--radius-md); }
+  .pillblock{ rx: 32px; }                   /* radius-pill, clamped to half the short side */
+  .rule     { fill: var(--bg); rx: 2px; }   /* the .gradient-rule bar, at its own geometry */
+
+  .name {
+    font-family: var(--font-display);
+    font-weight: var(--fw-light);
+    font-size: 64px;
+    letter-spacing: var(--ls-display);
+    fill: var(--fg);
+  }
+  .tagline {
+    font-family: var(--font-body);
+    font-weight: var(--fw-regular);
+    font-size: 13px;
+    fill: var(--fg-muted);
+  }
+</style>
+</head>
+<body>
+<svg class="cover" viewBox="0 0 960 288" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="INOV8 Orthopedics — Innovative orthopedic care for exceptional patient outcomes.">
+  <!--
+    blocks:      accent/teal-500 96x240 · brand/cyan-500 80x168 · brand-strong/blue-500 64x240 ·
+                 brand-deep/navy-900 96x144 · cyan-200 64x192 (relief), bottom-aligned at y=264
+    arrangement: a strip of unequal bands in the wordmark gradient's own order,
+                 teal to cyan to mid blue to navy, running left to right and bleeding off the right edge
+    pattern:     the .gradient-rule bar — 4px tall, 2px corners, 64px and 32px wide, cut out of the
+                 blocks in bg. Chosen because the brand's one structural mark is that rule: it sits
+                 under every section heading and grows 32 to 64px on hover.
+    scales:      widths space-24/space-20/space-16 · heights and pitch multiples of space-6 ·
+                 corners radius-md, and radius-pill clamped to half the short side on the tint block
+  -->
+  <rect class="ground" x="0" y="0" width="960" height="288"/>
+
+  <rect class="accent block"     x="560" y="24"  width="96" height="240"/>
+  <rect class="brand block"      x="656" y="96"  width="80" height="168"/>
+  <rect class="strong block"     x="736" y="24"  width="64" height="240"/>
+  <rect class="deep block"       x="800" y="120" width="96" height="144"/>
+  <rect class="tint pillblock"   x="896" y="72"  width="64" height="192"/>
+
+  <rect class="rule" x="576" y="72"  width="64" height="4"/>
+  <rect class="rule" x="576" y="120" width="64" height="4"/>
+  <rect class="rule" x="576" y="168" width="64" height="4"/>
+  <rect class="rule" x="672" y="144" width="32" height="4"/>
+  <rect class="rule" x="672" y="192" width="32" height="4"/>
+  <rect class="rule" x="752" y="72"  width="32" height="4"/>
+  <rect class="rule" x="752" y="120" width="32" height="4"/>
+  <rect class="rule" x="752" y="168" width="32" height="4"/>
+  <rect class="rule" x="752" y="216" width="32" height="4"/>
+  <rect class="rule" x="816" y="168" width="64" height="4"/>
+  <rect class="rule" x="816" y="216" width="64" height="4"/>
+  <rect class="rule" x="912" y="120" width="32" height="4"/>
+  <rect class="rule" x="912" y="168" width="32" height="4"/>
+
+  <text class="name" x="56" y="140">INOV8</text>
+  <text class="name" x="56" y="201">Orthopedics</text>
+  <text class="tagline" x="56" y="233">Innovative orthopedic care for exceptional patient outcomes.</text>
+</svg>
+</body>
+</html>

@@ -267,7 +267,19 @@
     "exportedAt": "2026-09-17T18:29:19.930Z",
     "projectId": "137bbb80-614b-4cf5-a9a2-2aeb441e80cd",
     "url": "https://claude.ai/design/p/137bbb80-614b-4cf5-a9a2-2aeb441e80cd",
-    "v": 1
+    "v": 1,
+    "upgradedAt": "2026-09-18T23:49:42Z"
   },
-  "title": "INOV8 Orthopedics Design System"
+  "title": "INOV8 Orthopedics Design System",
+  "lastChange": {
+    "by": "David Balderree",
+    "at": "2026-09-18T23:49:42Z",
+    "via": "Claude Code",
+    "note": "Upgrade: rebuilt the brand book (carried text kept at assets/notes/README.legacy.md), put a usage note on all 119 tokens, added components/index.d.ts and the Cover. Carried files, previews and uploads untouched."
+  },
+  "upgraded": {
+    "v": 1,
+    "at": "2026-09-18T23:49:42Z",
+    "from": "claude-design"
+  }
 }
