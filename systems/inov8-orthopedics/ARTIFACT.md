@@ -5,3 +5,4 @@
 - Pulled: 2026-09-18
 - The `project/` prefix was stripped from all published file paths when copying them into this directory.
 - Asset-store uploads were placed under `assets/<Group>/` per the `assetGroups` records in `design-system.json`.
+- Repo-only files, never published to the artifact: `ARTIFACT.md` and `SKILL.md` (the artifact type refuses a top-level `SKILL.md`).
