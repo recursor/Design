@@ -432,7 +432,7 @@ function Header({
       display: 'flex'
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/inov8-logo.png",
+    src: "../assets/inov8-logo.png",
     alt: "INOV8 Orthopedics",
     style: {
       height: 42
@@ -971,7 +971,7 @@ function Footer() {
   }, /*#__PURE__*/React.createElement("div", {
     style: footStyles.brand
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/inov8-logo.png",
+    src: "../assets/inov8-logo.png",
     alt: "INOV8 Orthopedics",
     style: {
       height: 44,

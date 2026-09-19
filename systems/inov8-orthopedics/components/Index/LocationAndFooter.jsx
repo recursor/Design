@@ -69,7 +69,7 @@ function Footer() {
     <footer style={footStyles.section}>
       <div style={footStyles.inner}>
         <div style={footStyles.brand}>
-          <img src="../../assets/inov8-logo.png" alt="INOV8 Orthopedics" style={{ height: 44, width: 'auto', alignSelf: 'flex-start', filter: 'brightness(0) invert(1)' }} />
+          <img src="../assets/inov8-logo.png" alt="INOV8 Orthopedics" style={{ height: 44, width: 'auto', alignSelf: 'flex-start', filter: 'brightness(0) invert(1)' }} />
           <p style={footStyles.tagline}>Innovative orthopedic care for exceptional patient outcomes.</p>
           <div style={footStyles.social}>
             <a href="https://www.facebook.com/inov8orthopedics" aria-label="Facebook" style={footStyles.socialIcon}>

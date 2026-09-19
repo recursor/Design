@@ -36,7 +36,7 @@ function Header({ activeNav, onNav, onRequest }) {
       <div style={headerStyles.bar}>
         <div style={headerStyles.barInner}>
           <a href="#" onClick={(e) => { e.preventDefault(); onNav && onNav('home'); }} style={{ display: 'flex' }}>
-            <img src="../../assets/inov8-logo.png" alt="INOV8 Orthopedics" style={{ height: 42 }} />
+            <img src="../assets/inov8-logo.png" alt="INOV8 Orthopedics" style={{ height: 42 }} />
           </a>
 
           <nav style={headerStyles.nav}>

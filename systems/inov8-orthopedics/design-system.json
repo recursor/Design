@@ -57,159 +57,6 @@
       "files": {},
       "name": "notes",
       "order": []
-    },
-    "scrap": {
-      "files": {
-        "01-final-test.png": {
-          "blob": "abc9f2c51028a5bf57d50c4e841fe11e",
-          "name": "01-final-test.png",
-          "sha256": "9701105cabe391eba9f06e36fb73c39c8919495d9cd5832c1352fe4229744083",
-          "size": 58879,
-          "type": "image/png"
-        },
-        "01-find-override.png": {
-          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
-          "name": "01-find-override.png",
-          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
-          "size": 58869,
-          "type": "image/png"
-        },
-        "01-nav-attr.png": {
-          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
-          "name": "01-nav-attr.png",
-          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
-          "size": 58869,
-          "type": "image/png"
-        },
-        "01-nav-debug.png": {
-          "blob": "ac667d18537d27f66d9af9ab1d76fa40",
-          "name": "01-nav-debug.png",
-          "sha256": "8085f9356ca66b02df6075833b3b8efec32adf0fc819655b9ecd0e9d2ab964de",
-          "size": 58919,
-          "type": "image/png"
-        },
-        "01-nav-fix.png": {
-          "blob": "abc9f2c51028a5bf57d50c4e841fe11e",
-          "name": "01-nav-fix.png",
-          "sha256": "9701105cabe391eba9f06e36fb73c39c8919495d9cd5832c1352fe4229744083",
-          "size": 58879,
-          "type": "image/png"
-        },
-        "01-nav-state.png": {
-          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
-          "name": "01-nav-state.png",
-          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
-          "size": 58869,
-          "type": "image/png"
-        },
-        "01-nav-state3.png": {
-          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
-          "name": "01-nav-state3.png",
-          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
-          "size": 58869,
-          "type": "image/png"
-        },
-        "01-nav-test2.png": {
-          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
-          "name": "01-nav-test2.png",
-          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
-          "size": 58869,
-          "type": "image/png"
-        },
-        "01-nav-test3.png": {
-          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
-          "name": "01-nav-test3.png",
-          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
-          "size": 58869,
-          "type": "image/png"
-        },
-        "02-final-test.png": {
-          "blob": "7f365e4e0b9acb3199db449c101490b2",
-          "name": "02-final-test.png",
-          "sha256": "eb984197100d2344976a24ce347ceedc657ae6cb53bf8559a8e606f40fb5d686",
-          "size": 58899,
-          "type": "image/png"
-        },
-        "02-find-override.png": {
-          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
-          "name": "02-find-override.png",
-          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
-          "size": 58869,
-          "type": "image/png"
-        },
-        "02-nav-attr.png": {
-          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
-          "name": "02-nav-attr.png",
-          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
-          "size": 58869,
-          "type": "image/png"
-        },
-        "02-nav-debug.png": {
-          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
-          "name": "02-nav-debug.png",
-          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
-          "size": 58869,
-          "type": "image/png"
-        },
-        "02-nav-fix.png": {
-          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
-          "name": "02-nav-fix.png",
-          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
-          "size": 58869,
-          "type": "image/png"
-        },
-        "02-nav-state.png": {
-          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
-          "name": "02-nav-state.png",
-          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
-          "size": 58869,
-          "type": "image/png"
-        },
-        "02-nav-state3.png": {
-          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
-          "name": "02-nav-state3.png",
-          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
-          "size": 58869,
-          "type": "image/png"
-        },
-        "02-nav-test2.png": {
-          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
-          "name": "02-nav-test2.png",
-          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
-          "size": 58869,
-          "type": "image/png"
-        },
-        "02-nav-test3.png": {
-          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
-          "name": "02-nav-test3.png",
-          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
-          "size": 58869,
-          "type": "image/png"
-        },
-        "03-nav-fix.png": {
-          "blob": "ac667d18537d27f66d9af9ab1d76fa40",
-          "name": "03-nav-fix.png",
-          "sha256": "8085f9356ca66b02df6075833b3b8efec32adf0fc819655b9ecd0e9d2ab964de",
-          "size": 58919,
-          "type": "image/png"
-        },
-        "nav-test.png": {
-          "blob": "e13a61c9fb1cced55ba2c2d0ec1e382b",
-          "name": "nav-test.png",
-          "sha256": "08e29ad7fae4834d67db96cd6ad4a64be379f209a9e86ca4e3b1cdcd81b477f4",
-          "size": 58869,
-          "type": "image/png"
-        },
-        "standalone-check.png": {
-          "blob": "7377f2cb870899793c76603e19e94233",
-          "name": "standalone-check.png",
-          "sha256": "6a970de069bb810ca90391f3c4d4f301e099f887ae193d421e4173ae905b6a5c",
-          "size": 27894,
-          "type": "image/png"
-        }
-      },
-      "name": "scrap",
-      "order": []
     }
   },
   "blobs": {
@@ -242,8 +89,7 @@
     "Logos",
     "Uploads",
     "Other",
-    "notes",
-    "scrap"
+    "notes"
   ],
   "layout": "files",
   "libraries": [
@@ -273,9 +119,9 @@
   "title": "INOV8 Orthopedics Design System",
   "lastChange": {
     "by": "David Balderree",
-    "at": "2026-09-19T00:02:45Z",
+    "at": "2026-09-19T00:13:50Z",
     "via": "Claude Code",
-    "note": "Index preview now renders: the seven compiled components inlined from bundle.js, the Babel and .jsx script tags dropped, width=1280 on its card. The carried page is kept at components/Index/preview.legacy.html."
+    "note": "Removed the scrap asset group (18 migration debugging screenshots) and its uploads."
   },
   "upgraded": {
     "v": 1,
