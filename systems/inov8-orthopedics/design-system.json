@@ -273,9 +273,9 @@
   "title": "INOV8 Orthopedics Design System",
   "lastChange": {
     "by": "David Balderree",
-    "at": "2026-09-18T23:49:42Z",
+    "at": "2026-09-19T00:02:45Z",
     "via": "Claude Code",
-    "note": "Upgrade: rebuilt the brand book (carried text kept at assets/notes/README.legacy.md), put a usage note on all 119 tokens, added components/index.d.ts and the Cover. Carried files, previews and uploads untouched."
+    "note": "Index preview now renders: the seven compiled components inlined from bundle.js, the Babel and .jsx script tags dropped, width=1280 on its card. The carried page is kept at components/Index/preview.legacy.html."
   },
   "upgraded": {
     "v": 1,
