@@ -1,0 +1,337 @@
+/* =============================================================
+   INOV8 Orthopedics — Foundations
+   Color + type tokens sampled from the brand gradient logomark
+   and the live site at inov8ortho.com (Sept 2024).
+   ============================================================= */
+
+/* ---------- Webfonts (Google Fonts substitutions — see README) ---------- */
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap");
+
+:root {
+  /* ============================================================
+     BRAND GRADIENT — sampled directly from the wordmark
+     The signature INOV8 gradient runs left→right across the
+     wordmark, teal → cyan → mid blue → navy. Use as a hero
+     accent, on the logomark itself, and as the underline /
+     section divider treatment. Never tile or saturate large UI.
+     ============================================================ */
+  --inov8-grad-teal:        #01B0AB; /* I (leftmost) */
+  --inov8-grad-cyan:        #00A9D2; /* N transition */
+  --inov8-grad-mid:         #01668E; /* O */
+  --inov8-grad-blue:        #163A6D; /* V */
+  --inov8-grad-navy:        #20265A; /* 8 (rightmost) */
+  --inov8-gradient: linear-gradient(
+    90deg,
+    var(--inov8-grad-teal)  0%,
+    var(--inov8-grad-cyan) 22%,
+    var(--inov8-grad-mid)  50%,
+    var(--inov8-grad-blue) 70%,
+    var(--inov8-grad-navy) 100%
+  );
+
+  /* ============================================================
+     PRIMARY — Cyan / Teal
+     Used for primary CTAs, links, focused fields, hover accents.
+     ============================================================ */
+  --teal-50:   #E6F8F7;
+  --teal-100:  #BFEFEC;
+  --teal-200:  #80DFD9;
+  --teal-300:  #33C5BD;
+  --teal-500:  #01B0AB; /* brand teal */
+  --teal-600:  #019693;
+  --teal-700:  #017470;
+  --teal-800:  #014F4C;
+
+  --cyan-50:   #E6F6FB;
+  --cyan-100:  #BCE8F3;
+  --cyan-200:  #7FD2E8;
+  --cyan-300:  #33B8DE;
+  --cyan-500:  #00A9D2; /* brand cyan */
+  --cyan-600:  #008FB2;
+  --cyan-700:  #006C8A;
+
+  /* ============================================================
+     SECONDARY — Blue / Navy
+     Body emphasis, headings, nav, dark surfaces.
+     ============================================================ */
+  --blue-300:  #4A7FB2;
+  --blue-500:  #01668E; /* brand mid blue */
+  --blue-600:  #014E6E;
+  --blue-700:  #163A6D; /* brand deep blue */
+  --navy-800:  #1A2F5A;
+  --navy-900:  #20265A; /* brand navy (the 8) */
+  --navy-950:  #14183B; /* extended for text on light */
+
+  /* ============================================================
+     NEUTRALS — warm grays slightly tilted toward the navy hue
+     ============================================================ */
+  --neutral-0:    #FFFFFF;
+  --neutral-50:   #F7F8FA;
+  --neutral-100:  #EEF0F4;
+  --neutral-200:  #DDE2EA;
+  --neutral-300:  #C4CBD7;
+  --neutral-400:  #97A0B0;
+  --neutral-500:  #6B7385;
+  --neutral-600:  #4B5364;
+  --neutral-700:  #343A48;
+  --neutral-800:  #1F2330;
+  --neutral-900:  #11141C;
+
+  /* ============================================================
+     SEMANTIC — clinical-leaning, calm
+     ============================================================ */
+  --success-500:  #2E9E6A;
+  --success-50:   #E7F5EE;
+  --warning-500:  #D08A2C;
+  --warning-50:   #FBF1E1;
+  --danger-500:   #C24545;
+  --danger-50:    #FAEAEA;
+  --info-500:     var(--cyan-500);
+  --info-50:      var(--cyan-50);
+
+  /* ============================================================
+     SEMANTIC TEXT / SURFACE TOKENS — what to reach for in components
+     ============================================================ */
+  --bg:           var(--neutral-0);
+  --bg-soft:      var(--neutral-50);   /* page wash, alt sections */
+  --bg-muted:     var(--neutral-100);  /* cards on white wash */
+  --bg-dark:      var(--navy-900);     /* footer, dark hero */
+  --bg-dark-soft: var(--navy-800);
+
+  --fg:           var(--navy-950);     /* body */
+  --fg-strong:    var(--navy-900);     /* headings */
+  --fg-muted:     var(--neutral-600);  /* secondary copy */
+  --fg-subtle:    var(--neutral-500);  /* meta, captions */
+  --fg-on-dark:   var(--neutral-0);
+  --fg-on-brand:  var(--neutral-0);
+
+  --border:       var(--neutral-200);
+  --border-strong:var(--neutral-300);
+  --divider:      var(--neutral-100);
+
+  --link:         var(--cyan-600);
+  --link-hover:   var(--blue-500);
+
+  /* Brand role tokens */
+  --brand:        var(--cyan-500);     /* default brand accent */
+  --brand-strong: var(--blue-500);
+  --brand-deep:   var(--navy-900);
+  --accent:       var(--teal-500);
+
+  /* ============================================================
+     TYPE SYSTEM
+     Display / headings:  Jost   (geometric, near-Futura — matches
+                                   the wordmark's "Orthopedics")
+     Body / UI:           DM Sans (clean, professional, healthcare)
+     Substitutions — see README. Final font files TBD.
+     ============================================================ */
+  --font-display: "Jost", "Futura", "Avenir Next", system-ui, sans-serif;
+  --font-body:    "DM Sans", "Helvetica Neue", system-ui, sans-serif;
+  --font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Display weights run light → semibold; never use heavy/black */
+  --fw-light:     300; /* @kind font */
+  --fw-regular:   400; /* @kind font */
+  --fw-medium:    500; /* @kind font */
+  --fw-semibold:  600; /* @kind font */
+  --fw-bold:      700; /* @kind font */
+
+  /* Type scale — 1.250 major third, tightened at large sizes */
+  --fs-xs:    12px;
+  --fs-sm:    14px;
+  --fs-base:  16px;
+  --fs-md:    18px;
+  --fs-lg:    20px;
+  --fs-xl:    24px;
+  --fs-2xl:   30px;
+  --fs-3xl:   38px;
+  --fs-4xl:   48px;
+  --fs-5xl:   60px;
+  --fs-6xl:   76px;
+
+  --lh-tight:  1.1;  /* @kind font */
+  --lh-snug:   1.25; /* @kind font */
+  --lh-normal: 1.5;  /* @kind font */
+  --lh-loose:  1.7;  /* @kind font */
+
+  --ls-display: -0.01em;   /* slight negative for display @kind font */
+  --ls-eyebrow:  0.14em;   /* eyebrows/labels — ALL CAPS, tracked @kind font */
+  --ls-body:     0;        /* @kind font */
+
+  /* ============================================================
+     SPACING / RADII / SHADOWS / MOTION
+     ============================================================ */
+  --space-0:    0;
+  --space-1:    4px;
+  --space-2:    8px;
+  --space-3:    12px;
+  --space-4:    16px;
+  --space-5:    20px;
+  --space-6:    24px;
+  --space-8:    32px;
+  --space-10:   40px;
+  --space-12:   48px;
+  --space-16:   64px;
+  --space-20:   80px;
+  --space-24:   96px;
+
+  --radius-xs:  4px;
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-pill: 999px;
+
+  /* Soft, low-spread shadows — clinical, not dramatic */
+  --shadow-xs: 0 1px 2px rgba(32,38,90,0.06);
+  --shadow-sm: 0 2px 6px rgba(32,38,90,0.06), 0 1px 2px rgba(32,38,90,0.04);
+  --shadow-md: 0 8px 24px -8px rgba(32,38,90,0.16), 0 2px 6px rgba(32,38,90,0.06);
+  --shadow-lg: 0 24px 48px -16px rgba(32,38,90,0.18), 0 8px 16px -8px rgba(32,38,90,0.08);
+  --shadow-focus: 0 0 0 3px rgba(0,169,210,0.32);
+
+  /* Motion — calm, professional, no bounces */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);    /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur-base: 200ms; /* @kind other */
+  --dur-slow: 400ms; /* @kind other */
+}
+
+/* =============================================================
+   SEMANTIC ELEMENT STYLES
+   Apply by tag — these are reasonable defaults; components may
+   override via the tokens above.
+   ============================================================= */
+
+html { font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--fg-strong);
+  font-weight: var(--fw-light);
+  letter-spacing: var(--ls-display);
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--space-4);
+}
+
+/* Display — full hero treatment; light weight by default
+   reflects the airy "Orthopedics" wordmark. */
+.display, h1 {
+  font-size: var(--fs-5xl);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-tight);
+}
+
+h2 {
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-light);
+}
+
+h3 {
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-regular);
+}
+
+h4 {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-medium);
+}
+
+h5 {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-medium);
+}
+
+h6 {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+}
+
+/* Emphasis name treatment — used on physician cards:
+   "Stefan **Kreuzer**" with last name bold. */
+.name-emphasis {
+  font-family: var(--font-display);
+  font-weight: var(--fw-light);
+}
+.name-emphasis strong { font-weight: var(--fw-semibold); }
+
+/* Eyebrow / overline labels — all caps, generously tracked */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow);
+  color: var(--brand);
+}
+
+p {
+  margin: 0 0 var(--space-4);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--fg);
+  text-wrap: pretty;
+}
+
+.lead {
+  font-size: var(--fs-md);
+  line-height: var(--lh-normal);
+  color: var(--fg-muted);
+}
+
+small, .small {
+  font-size: var(--fs-sm);
+  color: var(--fg-muted);
+}
+
+.caption {
+  font-size: var(--fs-xs);
+  color: var(--fg-subtle);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+a:hover { color: var(--link-hover); }
+a:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-xs);
+}
+
+strong, b { font-weight: var(--fw-semibold); color: var(--fg-strong); }
+
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+/* Brand gradient as a text fill — for hero accents only, sparingly */
+.gradient-text {
+  background: var(--inov8-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Gradient rule — common section divider */
+.gradient-rule {
+  height: 4px;
+  border: 0;
+  border-radius: 2px;
+  background: var(--inov8-gradient);
+  width: 64px;
+  margin: var(--space-4) 0;
+}

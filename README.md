@@ -6,6 +6,15 @@ INOV8's design systems, one folder per system under `systems/`, mirrored from th
 |---|---|---|
 | INOV8 Orthopedics | [`systems/inov8-orthopedics/`](systems/inov8-orthopedics/) | see its `ARTIFACT.md` |
 
+## Designs
+
+Finished pieces made with a system (documents, handouts, forms), one folder per design under `designs/`. Each folder holds the design and the files it loads, plus an `ARTIFACT.md` naming the claude.ai design project it was pulled from.
+
+| Design | Folder | Source project |
+|---|---|---|
+| Surgical Checklist & Clearance | [`designs/surgical-checklist/`](designs/surgical-checklist/) | Surgical checklist development |
+| Antibiotic Protocol | [`designs/antibiotic-protocol/`](designs/antibiotic-protocol/) | Surgical checklist development |
+
 ## Using a system from an agent
 
 **Claude Code:** install the `inov8-design-skills` plugin from the `inov8-plugins` marketplace (`/plugin marketplace add recursor/INOV8Skills`, then `/plugin install inov8-design-skills@inov8-plugins`). Its skill fetches this repo and follows the system's own `SKILL.md`.
