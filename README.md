@@ -22,7 +22,7 @@ Finished pieces made with a system (documents, handouts, forms), one folder per 
 **Codex:** install the system's skill straight from this repo, then restart Codex:
 
 ```
-$skill-installer install https://github.com/recursor/Design/tree/main/systems/inov8-orthopedics
+$skill-installer install https://github.com/recursor/INOV8.Design/tree/main/systems/inov8-orthopedics
 ```
 
 **Anything else:** clone the repo and have the agent read `systems/<system>/SKILL.md` first.
